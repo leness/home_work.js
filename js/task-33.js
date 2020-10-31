@@ -13,21 +13,21 @@
 // // Ожидается что функция вернет 'mango' для объекта 'supports'
 // // Ожидается что функция вернет 'lux' для объекта 'sellers'
 
-// const findBestEmployee = function (employees) {
-//   "use strict";
-//   // Write code under this line
-//   let max = 0;
-//   let liderName = "";
+const findBestEmployee = function (employees) {
+  "use strict";
+  // Write code under this line
+  let max = 0;
+  let liderName = "";
 
-//   for (const [name, numberOfTasks] of Object.entries(employees)) {
-//     if (max < numberOfTasks) {
-//       max = numberOfTasks;
-//       liderName = name;
-//     }
-//   }
+  for (const [name, numberOfTasks] of Object.entries(employees)) {
+    if (max < numberOfTasks) {
+      max = numberOfTasks;
+      liderName = name;
+    }
+  }
 
-//   return liderName;
-// };
+  return liderName;
+};
 
 // // Объекты и ожидаемый результат
 // const developers = {
