@@ -1,23 +1,41 @@
-//  ФУНКЦИОНАЛЬНЫЕ МЕТОДЫ МАССИВОВ
-// array.reduce((acc, element, idx, array)=>{}, 0||{}||[]) - что угодно
+// Задача 6-10
+// reduce, filter, sort
+// Получи массив всех умений всех пользователей(поле skills),
+//     при этом не должно быть повторяющихся умений и они должны
+// быть отсортированы в алфавитном порядке.
 
-//      .map   (( - , element, idx, array)=>{}) - []
+// Слияние массивов:
 
-//      .filter(( - , element, idx, array)=>{}) - []
-//      .find  (( - , element, idx, array)=>{}) - element
+// const odd = [1, 3, 5];
+// const even = [2, 4, 6];
 
-//     .forEach(( - , element, idx, array)=>{}) - ничего, замена цикла for()
+// // 1
+// [...odd, ...even];
+// //  [1, 3, 5, 2, 4, 6]
 
-//      .some  (( - , element, idx, array)=>{}) - true, если хотя бы один элемент соответствует условию
-//      .every (( - , element, idx, array)=>{}) - true, если все соответствуют
+// // 2
+// odd.concat(even)
+// //  [1, 3, 5, 2, 4, 6]
+// Используй только перебирающие методы массива которые
+// не изменяют(не мутируют) исходный массив.Т.е.нельзя
+// использовать for, splice, push и т.п.мутирующие методы.
 
-//      .sort  ((a, b)=> a - b) - сортирует от меньшего к большему
-//      .sort  ((a, b)=> b - a) - от большего к меньшему
-//      .sort()                 - в алфавитном порядке
-//      .sort().reverse()       - в обратном алфавитному порядку
-// import data from '../data/objects.js'
-// console.log(data)
+// Write code under this line
+const getSortedUniqueSkills = (array) => array
 
-// console.log(data.map(el=>{
-//  return el.id
-// }))
+.map((users) => users.skills)
+.reduce((allSkills, user) => [...allSkills, ...user], [])
+.filter((skills, idx, arr) => {
+    if(arr.indexOf(skills) === idx) return skills
+}).sort()
+ console.log(getSortedUniqueSkills(users));
+/* [ 'adipisicing', 'amet',
+ 'anim', 'commodo',
+ 'culpa', 'elit',
+ 'ex', 'ipsum',
+ 'irure', 'laborum',
+ 'lorem', 'mollit',
+ 'non', 'nostrud',
+ 'nulla', 'proident',
+ 'tempor', 'velit',
+ 'veniam' ]; */
